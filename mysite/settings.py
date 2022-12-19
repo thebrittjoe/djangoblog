@@ -112,6 +112,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# media files (user uploads)
+MEDIA_URL = '/media/'
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+MEDIA_ROOT = os.path.join(SITE_ROOT, '..', 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -123,3 +128,9 @@ EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+# Clam AV settings
+CLAMAV_USE_TCP = False
+CLAMAV_TCP_PORT = 3310
+CLAMAV_TCP_ADDR = '127.0.0.1'
+
